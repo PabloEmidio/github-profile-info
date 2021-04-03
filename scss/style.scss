@@ -8,6 +8,16 @@ ul, ol, li {
     list-style: none;
 }
 
+a{
+    text-decoration: none;
+    color: #fff;
+
+    &:hover{
+        color: #aaa;
+        text-decoration: underline;
+    }
+}
+
 body{
     background: rgba(0, 0, 0,.9);
     max-height: 100vh;
@@ -24,7 +34,6 @@ body{
         right: 100px;
         left: 100px;
     }
-
 
     img{
         width: 30px;
@@ -95,12 +104,7 @@ main{
     flex-wrap: wrap;
     justify-content: space-between;
     position: relative;
-    // padding: {
-        // left: 30px;
-        // right: 30px;
-    // }
-
-        
+   
     h1{
         height: 30px;
         padding: {
@@ -124,11 +128,11 @@ main{
         width: 100%;
         justify-content: center;
         align-content: center;
-        
+
         .list{
             margin-top: 20px;
         }
-        
+
         .item{
             margin-top: 5px;
             color: #fff;
@@ -142,7 +146,6 @@ main{
     }
 
     &:after{
-    
         content: "";
         display: block;
         left: 50%;
@@ -152,8 +155,6 @@ main{
         background-color: #fff;
     }
 }
-
-
 
 @media(max-width: 700px){
     main .bio{

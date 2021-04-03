@@ -25,6 +25,15 @@ function search(){
         const data = xhr.response
         if (!data.message){
             putInfo(data, repositoryUrl)
+        } else{
+            document.querySelector('.img-profile').setAttribute('src', './images/profile.jpg')
+            document.querySelector('.name-profile').textContent = 'Not Found'
+            document.querySelector('.bio').textContent = data.message
+            document.querySelector('.main-header').style.backgroundImage = 'url()'
+            document.querySelector('.information').innerHTML = ''
+            document.querySelector('.repositories').innerHTML = ''
+
+
         }
         // console.log(data)
     }
@@ -63,7 +72,7 @@ function putInfo(info, url){
         repositories.sort((a, b) => b.stargazers_count - a.stargazers_count)
         for (let i=0; i<5; i++){
             console.log(repositories[i])
-            html += `<li class="item">${repositories[i].name}\t==>\t${repositories[i].language}</li>`
+            html += `<li class="item"><a href="${repositories[i].html_url}" target="_blank">${repositories[i].name}</a>\t==>\t${repositories[i].language}</li>`
         }
         $repositories.innerHTML = html + '</ul>'
 

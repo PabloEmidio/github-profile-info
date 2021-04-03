@@ -6,6 +6,13 @@
 ul, ol, li {
   list-style: none; }
 
+a {
+  text-decoration: none;
+  color: #fff; }
+  a:hover {
+    color: #aaa;
+    text-decoration: underline; }
+
 body {
   background: rgba(0, 0, 0, 0.9);
   max-height: 100vh; }
