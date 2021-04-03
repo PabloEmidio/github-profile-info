@@ -53,7 +53,7 @@ function search(){
 function putInfo(info, url){
     document.querySelector('.img-profile').setAttribute('src', info.avatar_url)
     document.querySelector('.name-profile').textContent = info.name
-    document.querySelector('.name-profile').setAttribute('href', `https://github.com/${info.name}`)
+    document.querySelector('.name-profile').setAttribute('href', `https://github.com/${info.login}`)
     document.querySelector('.name-profile').setAttribute('target', '_blank')
     document.querySelector('.bio').textContent = info.bio
     document.querySelector('.main-header').style.backgroundImage = 'url(./images/programming-languages.png)'
@@ -91,12 +91,14 @@ function putInfo(info, url){
             }
         }
         repositories.sort((a, b) => b.stargazers_count - a.stargazers_count)
-        for (let i=0; i<5; i++){
+        for (let i=0; i<repositories.length; i++){
             if (!repositories[i].language){
                 repositories[i].language = 'there isn\'t information about'
             }
-            console.log(repositories[i])
-            html += `<li class="item"><a href="${repositories[i].html_url}" target="_blank">${repositories[i].name}</a>\t==>\t${repositories[i].language}</li>`
+            if (i<5){
+                console.log(repositories[i])
+                html += `<li class="item" title="${repositories[i].description}"><a href="${repositories[i].html_url}" target="_blank">${repositories[i].name}</a>\t==>\t${repositories[i].language}</li>`
+            }
         }
         $repositories.innerHTML = html + '</ul>'
     }
