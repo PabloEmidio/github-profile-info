@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+body{
+    background: rgba(0, 0, 0,.9);
+    max-height: 100vh;
+}
+
+.header{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    background: #fef;
+    height: 50px;
+    padding: {
+        right: 100px;
+        left: 100px;
+    }
+
+
+    img{
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    input{
+        width: 30vw;
+    }
+
+}
+
+main{
+    display: block;
+    background: #eee;
+    max-width: 80vw;
+    border-radius: 10px;
+    margin: {
+        left: auto;
+        right: auto;
+        top: 80px;
+    }
+
+    .main-header{
+        min-height: 40px;        
+        background: {
+            size: 100px;
+        } 
+    }
+
+    .img-profile{
+        display: block;
+        margin: {
+            left: auto;
+            right: auto;
+        };
+        width: 120px;
+        height: 120px;
+        border-radius: 100%;
+        transform: translateY(-50%);
+    }
+
+    .name-profile{
+        font-size: 1.8em;
+        text-align: center;
+    }
+
+    .bio{
+        text-align: center;
+        margin-top: 5px;
+        transform: translateY(110%);
+        font: {
+            weight: 500;
+            size: 1em;
+            style: italic;
+        }
+    }
+}
+
+.content{
+    background: #000;
+    min-height: 200px;
+    max-height: 100%;
+    margin-top: 30px;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    // padding: {
+        // left: 30px;
+        // right: 30px;
+    // }
+
+        
+    h1{
+        height: 30px;
+        padding: {
+            top: 20px;
+        };
+        text-transform: capitalize;
+        color: #ddd;
+        padding-left: 10px;
+        flex: 1;
+    }
+
+    .info{
+        width: 50%;
+        padding-left: 30px;
+        flex: 1;
+    }
+    
+    .information, .repositories{
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+        justify-content: center;
+        align-content: center;
+        
+        .list{
+            margin-top: 20px;
+        }
+        
+        .item{
+            margin-top: 5px;
+            color: #fff;
+            padding: 10px;
+            font: {
+                weight: bold;
+                family: Arial;
+                
+            }
+        }
+    }
+
+    &:after{
+    
+        content: "";
+        display: block;
+        left: 50%;
+        position: absolute;
+        height: 100%;
+        width: 3px;
+        background-color: #fff;
+    }
+}
+
+
+
+@media(max-width: 700px){
+    main .bio{
+        transform: translateY(60%);
+    }
+}
