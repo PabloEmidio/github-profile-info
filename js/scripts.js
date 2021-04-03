@@ -14,7 +14,22 @@ function inputSearch(event){
     }
 }
 
+function resetSection(info){
+    document.querySelector('.img-profile').setAttribute('src', './images/profile.jpg')
+    document.querySelector('.main-header').style.backgroundImage = 'url()'
+    document.querySelector('.information').innerHTML = ''
+    document.querySelector('.repositories').innerHTML = ''
+    if (!info){
+        document.querySelector('.name-profile').textContent = 'github profile'
+        document.querySelector('.bio').textContent = ''
+    } else {
+        document.querySelector('.name-profile').textContent = 'Not Found'
+        document.querySelector('.bio').textContent = info.message
+    }
+}
+
 function search(){
+    resetSection()
 
     const profile = $inputSearch.value.replace(' ', '')
     const url = `https://api.github.com/users/${profile}`
@@ -22,24 +37,16 @@ function search(){
     xhr.responseType = 'json'
     xhr.open('GET', url, true)
     xhr.send()
-
+    
     const repositoryUrl = `https://api.github.com/users/${profile}/repos`
-
+    
     xhr.onload = () => {
         const data = xhr.response
         if (!data.message){
             putInfo(data, repositoryUrl)
         } else{
-            document.querySelector('.img-profile').setAttribute('src', './images/profile.jpg')
-            document.querySelector('.name-profile').textContent = 'Not Found'
-            document.querySelector('.bio').textContent = data.message
-            document.querySelector('.main-header').style.backgroundImage = 'url()'
-            document.querySelector('.information').innerHTML = ''
-            document.querySelector('.repositories').innerHTML = ''
-
-
+            resetSection(data)
         }
-        // console.log(data)
     }
 }
 
@@ -53,6 +60,11 @@ function putInfo(info, url){
     const $info = document.querySelector('.information')
     if (!info.twitter_username){
         info.twitter_username = ''
+    }
+    if (info.hireable){
+        info.hireable = 'Yes'
+    } else{
+        info.hireable = 'Not'
     }
     let html = `<ul class="list">
         <li class="item">Type: ${info.type}</li>
@@ -87,8 +99,6 @@ function putInfo(info, url){
             html += `<li class="item"><a href="${repositories[i].html_url}" target="_blank">${repositories[i].name}</a>\t==>\t${repositories[i].language}</li>`
         }
         $repositories.innerHTML = html + '</ul>'
-
     }
-
 }
 
