@@ -34,9 +34,11 @@ body {
     width: 30vw; }
 
 main {
-  display: block;
+  display: flex;
+  flex-flow: column;
   background: #eee;
   max-width: 80vw;
+  min-width: 300px;
   border-radius: 10px;
   margin-left: auto;
   margin-right: auto;
@@ -112,4 +114,21 @@ main {
 
 @media (max-width: 700px) {
   main .bio {
-    transform: translateY(60%); } }
+    transform: translateY(60%); }
+  .content {
+    flex-flow: column;
+    align-content: center;
+    align-items: center; }
+    .content::after {
+      display: none; }
+    .content .information {
+      border-bottom: 1px solid #fff;
+      padding-bottom: 30px; }
+    .content .info-content {
+      text-align: center; } }
+
+@media (max-width: 450px) {
+  .header, main {
+    display: none; }
+  body {
+    background-image: url(../images/programming-languages.png); } }
