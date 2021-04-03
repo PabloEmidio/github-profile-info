@@ -34,7 +34,7 @@ function putInfo(info, url){
     document.querySelector('.img-profile').setAttribute('src', info.avatar_url)
     document.querySelector('.name-profile').textContent = info.name
     document.querySelector('.bio').textContent = info.bio
-    document.querySelector('.main-header').style.backgroundImage = 'url(../images/programming-languages.png)'
+    document.querySelector('.main-header').style.backgroundImage = 'url(./images/programming-languages.png)'
     const $info = document.querySelector('.information')
     let html = `<ul class="list">
         <li class="item">Type: ${info.type}</li>
