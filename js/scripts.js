@@ -1,3 +1,7 @@
+if (window.screen.width<450){
+    document.write('<div style="text-align: center"><h1>Without support</h1><h2>Screen very little</h2><p>reload in desktop mode</p></div>')
+}
+
 const $inputSearch = document.querySelector('.inp-search')
 $inputSearch.addEventListener('keydown', inputSearch)
 
@@ -83,7 +87,6 @@ function putInfo(info, url){
             html += `<li class="item"><a href="${repositories[i].html_url}" target="_blank">${repositories[i].name}</a>\t==>\t${repositories[i].language}</li>`
         }
         $repositories.innerHTML = html + '</ul>'
-
 
     }
 
