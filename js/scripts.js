@@ -42,15 +42,20 @@ function search(){
 function putInfo(info, url){
     document.querySelector('.img-profile').setAttribute('src', info.avatar_url)
     document.querySelector('.name-profile').textContent = info.name
+    document.querySelector('.name-profile').setAttribute('href', `https://github.com/${info.name}`)
+    document.querySelector('.name-profile').setAttribute('target', '_blank')
     document.querySelector('.bio').textContent = info.bio
     document.querySelector('.main-header').style.backgroundImage = 'url(./images/programming-languages.png)'
     const $info = document.querySelector('.information')
+    if (!info.twitter_username){
+        info.twitter_username = ''
+    }
     let html = `<ul class="list">
         <li class="item">Type: ${info.type}</li>
         <li class="item">Location: ${info.location}</li>
         <li class="item">Hireable: ${info.hireable}</li>
         <li class="item">Public Repositories: ${info.public_repos}</li>
-        <li class="item">Twitter: ${info.twitter_username}</li>
+        <li class="item">Twitter: <a href="https://twitter.com/${info.twitter_username}" target="_blank">${info.twitter_username}</li>
     </ul>`
     $info.innerHTML = html
 
@@ -71,6 +76,9 @@ function putInfo(info, url){
         }
         repositories.sort((a, b) => b.stargazers_count - a.stargazers_count)
         for (let i=0; i<5; i++){
+            if (!repositories[i].language){
+                repositories[i].language = 'there isn\'t information about'
+            }
             console.log(repositories[i])
             html += `<li class="item"><a href="${repositories[i].html_url}" target="_blank">${repositories[i].name}</a>\t==>\t${repositories[i].language}</li>`
         }

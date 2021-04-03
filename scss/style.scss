@@ -77,9 +77,14 @@ main{
         transform: translateY(-50%);
     }
 
-    .name-profile{
-        font-size: 1.8em;
+    .profile-title{
         text-align: center;
+    }
+
+    .name-profile{
+        display: inline-block;
+        color: #000;
+        font: 1.8em;
     }
 
     .bio{

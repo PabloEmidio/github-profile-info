@@ -52,9 +52,12 @@ main {
     height: 120px;
     border-radius: 100%;
     transform: translateY(-50%); }
-  main .name-profile {
-    font-size: 1.8em;
+  main .profile-title {
     text-align: center; }
+  main .name-profile {
+    display: inline-block;
+    color: #000;
+    font: 1.8em; }
   main .bio {
     text-align: center;
     margin-top: 5px;
