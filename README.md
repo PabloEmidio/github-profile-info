@@ -1,1 +1,6 @@
-# Doesn't work at all screens yet
+# Simple 
+
+## project to visualize github's profile's informations.
+
+
+![Screenshot](./.images/screenshot.jpeg)
