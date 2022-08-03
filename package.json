@@ -1,0 +1,26 @@
+{
+   "name": "github-profile-info",
+   "version": "1.0.0",
+   "description": "Show information from github profile",
+   "main": "index.js",
+   "type": "module",
+   "scripts": {
+      "server": "node index.js",
+      "node-sass": "node-sass --watch src/static/scss/style.scss src/static/css/style.css",
+      "test": "echo \"No tests\" && exit 0"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/PabloEmidio/github-profile-info.git"
+   },
+   "author": "Pablo Emidio",
+   "license": "MIT",
+   "bugs": {
+      "url": "https://github.com/PabloEmidio/github-profile-info/issues"
+   },
+   "homepage": "https://github.com/PabloEmidio/github-profile-info#readme",
+      "dependencies": {
+      "express": "^4.18.1",
+      "node-sass": "^7.0.1"
+   }
+}
