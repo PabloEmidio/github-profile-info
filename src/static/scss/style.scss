@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+
+  &:hover {
+    color: #aaa;
+    text-decoration: underline;
+  }
+}
+
+body {
+  background: rgba(0, 0, 0, .9);
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  background: #fef;
+  height: 7.5vh;
+
+  padding: {
+    right: 100px;
+    left: 100px;
+  }
+
+  .search {
+    width: 70%;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+
+    img {
+      width: 30px;
+      height: 30px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  }
+
+  input {
+    width: 30vw;
+  }
+
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  background: #eee;
+  max-width: 80vw;
+  min-width: 300px;
+  min-height: 80vh;
+  border-radius: 10px;
+
+  margin: {
+    left: auto;
+    right: auto;
+    top: 80px;
+  }
+
+  .main-header {
+    min-height: 40px;
+
+    background: {
+      size: 100px;
+    }
+  }
+
+  .img-profile {
+    display: block;
+
+    margin: {
+      left: auto;
+      right: auto;
+    }
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    transform: translateY(-50%);
+  }
+
+  .profile-title {
+    text-align: center;
+  }
+
+  .name-profile {
+    display: inline-block;
+    color: #000;
+    font: 1.8em;
+  }
+
+  .bio {
+    text-align: center;
+    margin-top: 5px;
+    transform: translateY(110%);
+
+    font: {
+      weight: 500;
+      size: 1em;
+      style: italic;
+    }
+  }
+}
+
+.content {
+  background: #000;
+  min-height: 100%;
+  max-height: 100%;
+  margin-top: 30px;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  flex: 1;
+
+  h1 {
+    height: 30px;
+
+    padding: {
+      top: 20px;
+    }
+
+    ;
+    text-transform: capitalize;
+    color: #ddd;
+    padding-left: 10px;
+    flex: 1;
+  }
+
+
+  .info {
+    width: 50%;
+    padding-left: 30px;
+    min-height: 100%;
+    flex: 1;
+
+    .info-content{
+      min-height: 100%;
+      vertical-align: bottom;
+    }
+
+    &:last-of-type::before{
+      content: "";
+      display: block;
+      left: 50%;
+      bottom: 2%;
+      position: absolute;
+      height: 100%;
+      width: 3px;
+      background-color: #fff;
+    }
+  }
+
+  .information,
+  .repositories {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+
+    .list {
+      margin-top: 20px;
+    }
+
+    .item {
+      margin-top: 5px;
+      color: #fff;
+      padding: 10px;
+
+      font: {
+        weight: bold;
+        family: Arial;
+
+      }
+    }
+  }
+}
+
+@media(max-width: 700px) {
+  main .bio {
+    transform: translateY(60%);
+  }
+
+  .content {
+    height: 80vh;
+    flex-flow: column;
+    align-content: center;
+    align-items: center;
+
+
+    section {
+      padding: 0px;
+    }
+
+    .info {
+      padding: 0px;
+      width: 100%;
+
+      .info-content {
+        text-align: center;
+      }
+
+      &:last-of-type::before{
+        content: "";
+        display: block;
+        left: 0%;
+        bottom: 0%;
+        position: relative;
+        height: 3px;
+        width: 100%;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+// @media (max-width: 450px) {
+
+//   .header,
+//   main {
+//     display: none;
+//   }
+
+//   body {
+//     background-image: url('/static/images/programming-languages.png');
+//   }
+// }
